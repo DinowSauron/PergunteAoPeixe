@@ -7,14 +7,14 @@ function Ask(){
     while (x < 2){
         var perglow = perg[x].value.toLowerCase()
         if (perglow.indexOf("peix"))
-            if (perglow.indexOf("come"))
-                pts[x] -= 8 * perg[x].value.length
-            else if (perglow.indexOf("mata"))
-                pts[x] -= 10 * perg[x].value.length
-            else if (perglow.indexOf("mort"))
-                pts[x] -= 10 * perg[x].value.length
+            if (perglow.indexOf("comer "))
+                pts[x] += 8 * perg[x].value.length
+            else if (perglow.indexOf("matar"))
+                pts[x] += 10 * perg[x].value.length
+            else if (perglow.indexOf("morte"))
+                pts[x] += 10 * perg[x].value.length
             else
-                pts[x] += 8 * ((perg[x].value.length + 0.001) / 2)
+                pts[x] -= 8 * ((perg[x].value.length + 0.001) / 2)
 
         if (perglow.indexOf("sim"))
             pts[x] += 4
@@ -55,8 +55,12 @@ function Ask(){
             || perglow.indexOf("joga")  || perglow.indexOf("stud")  || perglow.indexOf("vida") 
             || perglow.indexOf("bom")  || perglow.indexOf("inhei")  || perglow.indexOf("anima") 
             || perglow.indexOf("progr")  || perglow.indexOf("nada")  || perglow.indexOf("tubar") 
-            || perglow.indexOf("perg")  || perglow.indexOf("tubar") )
+            || perglow.indexOf("perg")  || perglow.indexOf("tubar") || perglow.indexOf("tubar") 
+            || perglow.indexOf("sush"))
             pts[x] += 7
+
+        if (perglow.indexOf("th"))
+            pts[x] += -0.3
         if (perglow.indexOf("ea"))
             pts[x] += -1
         if (perglow.indexOf("ss"))
@@ -67,7 +71,7 @@ function Ask(){
             pts[x] += -0.8
         if (perglow.indexOf("x"))
             pts[x] += 2.2
-            if (perglow.indexOf("aa"))
+        if (perglow.indexOf("aa"))
             pts[x] += -8
         if (perglow.indexOf("ae"))
             pts[x] += -2.4
@@ -120,19 +124,42 @@ function Ask(){
             perglow.indexOf()
         
         pts[x] = pts[x] / perg[x].value.length
+        perglow = ""
         x++
     }
     var resp = ""
     
-    if(pts[0].toPrecision(3) > pts[1].toPrecision(3))
+    if(pts[0].toPrecision(3) > pts[1].toPrecision(3)){
         resp = perg[0].value 
-    else if(pts[1].toPrecision(3) > pts[0].toPrecision(3))
+        perg[1].focus()
+    }
+    else if(pts[1].toPrecision(3) > pts[0].toPrecision(3)){
         resp = perg[1].value
+        perg[0].focus()
+    }
+    else if(perg[0].value == "" && perg[1].value == ""){
+        perg[0].value = perg[1].value = "Nada"
+        resp = "Nada."
+    }
     else
         resp = "O peixe não sabe!"
+
+
     resultado.innerHTML = `<p>Entre ${perg[0].value} e ${perg[1].value} o peixe decidiu:</p>` 
+    //resultado.innerHTML = `<p>${pts[0].toPrecision(3)} é maior ${pts[1].toPrecision(3)}?</p>` 
     resultado.innerHTML += `<p style="margin: 5px; font: bold 30px Arial;">${resp}</p>` 
 }
+
+function GetFocus(num){
+    var perg = document.getElementsByName("option")
+    perg[num].focus
+}
+function CleanTxt(id){
+    var txt = document.getElementById(id)
+    if(txt.value == "Opção 1" || txt.value == "Opção 2")
+        txt.value = ""
+}
+
 
 
 var cor_atual = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() *255})`
