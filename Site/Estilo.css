@@ -5,8 +5,6 @@ body{
     padding: 0;
     margin: 0;
 }
-
-
 div#border{
     position: relative;
     text-align: center;
@@ -14,11 +12,14 @@ div#border{
     margin-top: 10px;
     width: 16.2cm;
     height: 22cm;
+    border: 5px solid black;
     border-radius: 8px;
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.39);
     margin-bottom: -20px;
 }
 img{
+    position: relative;
+    align-items: center;
     transform: scale(0.8);
 }
 header{
@@ -33,11 +34,12 @@ h1{
 }
 section{
     text-align: center;
+    border: 5px solid black;
     margin: auto;
     background-color: white;
     border-radius: 15px;
     width: 500px;
-    height: 250px;
+    height: 235px;
     padding: 20px;
     box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.39);
 }
@@ -49,6 +51,7 @@ input{
 }
 
 div#result{
+    
     background-color: gray;
     align-items: center;
     text-align: center;
@@ -57,6 +60,7 @@ div#result{
     margin: 2px;
     padding: 2px;
     height: 100px;
+    border: 2px solid black;
     box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.404);
     overflow: hidden;
 }
