@@ -1,8 +1,9 @@
 body{
-    background-color: rgb(58, 121, 204);
     font: bold 20px Arial;
     text-align: none;
+    background: royalblue;
 }
+
 
 div#border{
     text-align: center;
@@ -23,7 +24,6 @@ h1{
     font: bold 42px Arial;
     margin-bottom: 20px;
 }
-
 section{
     text-align: center;
     margin: auto;

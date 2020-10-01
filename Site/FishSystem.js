@@ -162,6 +162,3 @@ function CleanTxt(id){
 
 
 
-var cor_atual = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() *255})`
-window.document.body.style.background = cor_atual
-window.document.getElementById("result").style.background = cor_atual
