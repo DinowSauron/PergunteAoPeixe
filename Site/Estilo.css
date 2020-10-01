@@ -2,18 +2,25 @@ body{
     font: bold 20px Arial;
     text-align: none;
     background: royalblue;
+    padding: 0;
+    margin: 0;
 }
 
 
 div#border{
+    position: relative;
     text-align: center;
     margin: auto;
-    width: 19cm;
-    height: 25cm;
+    margin-top: 10px;
+    width: 16.2cm;
+    height: 22cm;
     border-radius: 8px;
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.39);
+    margin-bottom: -20px;
 }
-
+img{
+    transform: scale(0.8);
+}
 header{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -21,16 +28,16 @@ header{
 }
 h1{
     margin: auto;
-    font: bold 42px Arial;
-    margin-bottom: 20px;
+    font: bold 32px Arial;
+    margin-bottom: 10px;
 }
 section{
     text-align: center;
     margin: auto;
     background-color: white;
     border-radius: 15px;
-    width: 600px;
-    height: 300px;
+    width: 500px;
+    height: 250px;
     padding: 20px;
     box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.39);
 }
@@ -43,13 +50,21 @@ input{
 
 div#result{
     background-color: gray;
-    margin: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     border-radius: 10px;
-    padding: 10px;
-    height: 115px;
+    margin: 2px;
+    padding: 2px;
+    height: 100px;
     box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.404);
+    overflow: hidden;
 }
-p{
+div#result p{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     font: bold 20px Arial;
-    margin: center;
+    margin-top: 15px;
+    margin-bottom: -3px;
 }

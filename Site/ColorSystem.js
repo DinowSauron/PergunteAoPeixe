@@ -7,13 +7,13 @@ function ColorVariation(){
     setInterval(() => {
         color_target = Math.random() * 255;
         channel = Math.random() * 3 + " ";
+        channel =  channel[0];
     }, 2000);
-    setInterval(AlternateColors, 80);
+    setInterval(AlternateColors, 100);
 
-    
+
     function AlternateColors(){
         window.document.body.style.background; 
-        channel =  channel[0];
         cor_atual[channel] = ChangeColor(cor_atual[channel]);
 
 

@@ -137,7 +137,7 @@ function Ask(){
         resp = perg[1].value
         perg[0].focus()
     }
-    else if(perg[0].value == "" && perg[1].value == ""){
+    else if(perg[0].value == "" && perg[1].value == "" || perg[0].value == "Nada" && perg[1].value == "Nada"){
         perg[0].value = perg[1].value = "Nada"
         resp = "Nada."
     }
@@ -147,7 +147,7 @@ function Ask(){
 
     resultado.innerHTML = `<p>Entre ${perg[0].value} e ${perg[1].value} o peixe decidiu:</p>` 
     //resultado.innerHTML = `<p>${pts[0].toPrecision(3)} é maior ${pts[1].toPrecision(3)}?</p>` 
-    resultado.innerHTML += `<p style="margin: 5px; font: bold 30px Arial;">${resp}</p>` 
+    resultado.innerHTML += `<p style="margin-top: 10px; font: bold 30px Arial;">${resp}</p>` 
 }
 
 function GetFocus(num){
